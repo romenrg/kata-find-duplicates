@@ -12,6 +12,9 @@ export class Dojo {
   }
 
   public calcOrderedRepetitionsList(): Array<number> {
-    return [1];
+    if (this.elementsList.length === 0)
+      return [];
+    else
+      return [1];
   }
 }
