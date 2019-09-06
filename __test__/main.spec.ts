@@ -1,8 +1,9 @@
-import { Main } from '../src/main';
+import { Dojo } from '../src/dojo';
 
-describe('Default test', () => {
-  it('should work', () => {
-    const main = new Main('Hello world');
-    expect(main.getParam()).toBe('Hello world');
+describe('Test', () => {
+  it('Should return one element', () => {
+    const testArray: Array<number> = [1, 2, 3, 1];
+    const dojo = new Dojo(testArray);
+    expect(dojo.calcOrderedRepetitionsList()).toEqual([1]);
   });
 });
