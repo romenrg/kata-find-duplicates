@@ -41,7 +41,7 @@ export class Dojo {
   private findMinIndex(distancesArray: Array<number>) : number {
     let min = Dojo.MAX;
     let index = Dojo.MAX;
-    for (let i = 0; i < this.elementsList.length; i++) {
+    for (let i = 0; i < distancesArray.length; i++) {
       if (distancesArray[i] < min) {
         min = distancesArray[i];
         index = i;
