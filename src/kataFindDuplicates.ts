@@ -17,16 +17,7 @@ export class KataFindDuplicates {
       return [];
     } else {
       let result: Array<number> = [];
-      let distancesArray: Array<number> = new Array<number>(this.elementsList.length);
-      for (let i = 0; i < this.elementsList.length; i++) {
-        for (let j = i + 1; j < this.elementsList.length; j++) {
-          if (this.elementsList[i] === this.elementsList[j]) {
-            distancesArray[i] = j - i; //TODO: Break for third occurrence
-          } else if ((j === this.elementsList.length - 1) && (distancesArray[i] === undefined)) {
-            distancesArray[i] = KataFindDuplicates.MAX_DISTANCE;
-          }
-        }
-      }
+      let distancesArray = this.calcDistancesArray();
       distancesArray[distancesArray.length - 1] = KataFindDuplicates.MAX_DISTANCE;
       for (let i = 0; i < this.elementsList.length; i++) {
         const minIndex = this.findMinIndex(distancesArray);
@@ -37,6 +28,20 @@ export class KataFindDuplicates {
       }
       return result;
     }
+  }
+
+  private calcDistancesArray() {
+    let distancesArray: Array<number> = new Array<number>(this.elementsList.length);
+    for (let i = 0; i < this.elementsList.length; i++) {
+      for (let j = i + 1; j < this.elementsList.length; j++) {
+        if (this.elementsList[i] === this.elementsList[j]) {
+          distancesArray[i] = j - i; //TODO: Break for third occurrence
+        } else if ((j === this.elementsList.length - 1) && (distancesArray[i] === undefined)) {
+          distancesArray[i] = KataFindDuplicates.MAX_DISTANCE;
+        }
+      }
+    }
+    return distancesArray;
   }
 
   private findMinIndex(distancesArray: Array<number>) : number {
