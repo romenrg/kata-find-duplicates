@@ -6,6 +6,11 @@ describe('Test', () => {
     const dojo = new KataFindDuplicates(testArray);
     expect(dojo.calcOrderedRepetitionsList()).toEqual([]);
   });
+  it('Should return empty list when no duplicates are present', () => {
+    const testArray: Array<number> = [0, 1, 2, 3, 4, 5];
+    const dojo = new KataFindDuplicates(testArray);
+    expect(dojo.calcOrderedRepetitionsList()).toEqual([]);
+  });
   it('Should return one element', () => {
     const testArray: Array<number> = [1, 2, 3, 1];
     const dojo = new KataFindDuplicates(testArray);
