@@ -1,15 +1,14 @@
 {
-  "name": "typescript-boilerplate",
+  "name": "kata-find-duplicates",
   "version": "1.0.0",
-  "description": "Basic boilerplate project with Typecript for katas",
-  "main": "main.ts",
+  "description": "Kata from Codewars: Given an array of numbers, return the list of numbers that are repeated, sorted by occurrence of the repetition",
+  "main": "kataFindDuplicates.ts",
   "engineStrict": true,
   "engines": {
     "node": ">= 8.9.0"
   },
   "contributors": [
-    "Adrián Ferrera <adrian.ferrera@leanmind.es>",
-    "Daniel Ramos <daniel.ramos@leanmind.es>"
+    "Romén Rodríguez-Gil<romen@romenrg.com>"
   ],
   "license": "ISC",
   "scripts": {
