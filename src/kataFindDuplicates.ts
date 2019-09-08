@@ -21,13 +21,17 @@ export class KataFindDuplicates {
       distancesArray[distancesArray.length - 1] = KataFindDuplicates.MAX_DISTANCE;
       for (let i = 0; i < this.elementsList.length; i++) {
         const minIndex = this.findMinIndex(distancesArray);
-        if (minIndex !== KataFindDuplicates.MAX_DISTANCE && distancesArray[minIndex] !== KataFindDuplicates.MAX_DISTANCE) {
+        if (this.wasMinFoundAndHasValidValue(minIndex, distancesArray)) {
           result.push(this.elementsList[minIndex]);
           distancesArray[minIndex] = KataFindDuplicates.MAX_DISTANCE;
         }
       }
       return result;
     }
+  }
+
+  private wasMinFoundAndHasValidValue(minIndex: number, distancesArray: Array<number>) {
+    return minIndex !== KataFindDuplicates.MAX_DISTANCE && distancesArray[minIndex] !== KataFindDuplicates.MAX_DISTANCE;
   }
 
   private calcDistancesArray() {
