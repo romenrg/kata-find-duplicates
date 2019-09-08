@@ -40,12 +40,16 @@ export class KataFindDuplicates {
       for (let j = i + 1; j < this.elementsList.length; j++) {
         if (this.elementsList[i] === this.elementsList[j]) {
           distancesArray[i] = j - i; //TODO: Break for third occurrence
-        } else if ((j === this.elementsList.length - 1) && (distancesArray[i] === undefined)) {
+        } else if (this.isLastNumberAndDoesNotMatch(j, distancesArray, i)) {
           distancesArray[i] = KataFindDuplicates.MAX_DISTANCE;
         }
       }
     }
     return distancesArray;
+  }
+
+  private isLastNumberAndDoesNotMatch(j: number, distancesArray: Array<number>, i: number) {
+    return (j === this.elementsList.length - 1) && (distancesArray[i] === undefined);
   }
 
   private findMinIndex(distancesArray: Array<number>) : number {
