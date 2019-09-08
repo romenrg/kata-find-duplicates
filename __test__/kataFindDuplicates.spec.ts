@@ -21,6 +21,18 @@ describe('Test', () => {
     const dojo = new KataFindDuplicates(testArray);
     expect(dojo.calcOrderedRepetitionsList()).toEqual([2, 1]);
   });
+  //TODO: Take into acount multiple repetitions (>2), see "3" below:
+  // it('Should return 3 elements in the correct order', () => {
+  //   const testArray: Array<number> = [1, 2, 4, 4, 3, 3, 1, 5, 3];
+  //   const dojo = new KataFindDuplicates(testArray);
+  //   expect(dojo.calcOrderedRepetitionsList()).toEqual([4, 3, 1, 5]);
+  // });
+  //TODO: Exclude strings
+  // it('Should return 3 elements in the correct order, excluding the string', () => {
+  //   const testArray: Array<number> = [1, 2, 4, 4, 3, 3, 1, 5, 3, '5'];
+  //   const dojo = new KataFindDuplicates(testArray);
+  //   expect(dojo.calcOrderedRepetitionsList()).toEqual([4, 3, 1]);
+  // });
 });
 
 describe("Find Min Index Tests", () => {
